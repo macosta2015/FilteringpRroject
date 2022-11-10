@@ -1,6 +1,14 @@
 body {
     font-family: "Open Sans", sans-serif;
 }
+
+.title{
+    margin: auto;
+    width: 50%;
+    padding: 50px;
+    text-align: center;
+    border: 3px solid rgb(60, 87, 177);
+}
   
 .container {
     display: flex;
@@ -64,3 +72,4 @@ img{
 .name{
     font-weight: 300;
 }
+
