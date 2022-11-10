@@ -94,7 +94,11 @@ const setCategories = () =>{
 
         categoriesContainer.addEventListener("click", (e)=>{
             const selectedCat = e.target.textContent;
-        })
+
+            selectedCat === "All" 
+            ? displayProducts(data) 
+            : displayProducts(data.filter((item)=>item.cat === selectedCat));
+        });
     // console.log(categories)
     // console.log(allCats.filter((item,i)=>{
     //     return allCats.indexOf(item)===i;
