@@ -45,7 +45,7 @@ const data = [
 
 const productsContainer = document.querySelector(".products")
 const searchInput = document.querySelector(".search")
-const categoriesContainer = document.querySelector(".categories")
+const categoriesContainer = document.querySelector(".cats")
 const priceRange = document.querySelector(".priceRange")
 const priceValue = document.querySelector(".priceValue")
 
@@ -77,3 +77,28 @@ searchInput.addEventListener("keyup",(e)=>{
 
     console.log("Search Input (lowercase): ", value)
 }) 
+
+const setCategories = () =>{
+    const allCats = data.map((item)=>item.cat)
+    const categories = [
+        "All",
+        ...allCats.filter((item, i) => {
+            return allCats.indexOf(item) === i;
+        }),
+    ];
+
+    categoriesContainer.innerHTML = categories.map(cat=>
+        `
+            <span class="cat">${cat}</span>
+        `).join("")
+
+        categoriesContainer.addEventListener("click", (e)=>{
+            const selectedCat = e.target.textContent;
+        })
+    // console.log(categories)
+    // console.log(allCats.filter((item,i)=>{
+    //     return allCats.indexOf(item)===i;
+    // }))
+};
+
+setCategories()
